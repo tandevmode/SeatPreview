@@ -10,6 +10,194 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/modernizr-custom.js"></script>
+		<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+		<script>
+    $(window).on('load', function(){
+      liff.init(function (data) {});
+    });
+
+		$('#btn').on('click', function() {
+			liff.sendMessages([
+				{
+					 "type": "flex",
+					 "altText": "Your movie ticket",
+					 "contents":
+					 {
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://lh3.googleusercontent.com/AdcQEboXq5D4838KFaEd3XIM53xAiwDqsu7mIGLbCClG3z1YAf-wDwKSdqTeWbwy-VOzH3Xdgg5WJRUdQB5Z=w260",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "text",
+        "text": "Jurassic World : Fallen Kingdom",
+        "wrap": true,
+        "weight": "bold",
+        "gravity": "center",
+        "size": "xl"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+          },
+          {
+            "type": "icon",
+            "size": "sm",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+          },
+          {
+            "type": "text",
+            "text": "4.0",
+            "size": "sm",
+            "color": "#999999",
+            "margin": "md",
+            "flex": 0
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Date",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "Friday 22, 2:00PM",
+                "wrap": true,
+                "size": "sm",
+                "color": "#666666",
+                "flex": 4
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Place",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "7 Floor, No.3",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 4
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "baseline",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "Seats",
+                "color": "#aaaaaa",
+                "size": "sm",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "P Row, 7 Seat",
+                "wrap": true,
+                "color": "#666666",
+                "size": "sm",
+                "flex": 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "xxl",
+        "contents": [
+          {
+            "type": "spacer"
+          },
+          {
+            "type": "image",
+            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
+            "aspectMode": "cover",
+            "size": "xl"
+          },
+          {
+            "type": "text",
+            "text": "You can enter the theater by using this code instead of a ticket",
+            "color": "#aaaaaa",
+            "wrap": true,
+            "margin": "xxl",
+            "size": "xs"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+				}
+          ]).then(function () {
+            liff.closeWindow();
+          }).catch(function (error) {
+            window.alert('Error sending message: ' + error.message);
+          });
+  	});
+  </script>
 	</head>
 	<body>
 		<header class="header">
@@ -20,8 +208,16 @@
 				<div class="cube__side cube__side--front"></div>
 				<div class="cube__side cube__side--back">
 					<div class="screen">
-						<div class="intro__side">
-							<button class="action action--seats">Select your seats</button>
+						<div class="intro intro--shown">
+							<div class="intro__side">
+								<h2 class="intro__title">
+									<span class="intro__up">The Open Cinema <em>presents</em></span>
+									<span class="intro__down">Sintel <span class="intro__partial"><em>by</em> <a href="https://durian.blender.org/">The Blender Foundation</a></span></span>
+								</h2>
+							</div>
+							<div class="intro__side">
+								<button class="action action--seats">Select your seats</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -763,7 +959,7 @@
 				<li class="legend__item legend__item--reserved">Reserved</li>
 				<li class="legend__item legend__item--selected">Selected</li>
 			</ul>
-			<button class="action action--buy">Buy tickets</button>
+			<button id="btn" class="action action--buy">Buy tickets</button>
 		</div><!-- /plan -->
 		<button class="action action--lookaround action--disabled" arial-label="Unlook View"></button>
 		<script src="js/classie.js"></script>
