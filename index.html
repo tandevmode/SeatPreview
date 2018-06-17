@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/modernizr-custom.js"></script>
 		<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.2.0/vconsole.min.js"></script>
 		<script>
 		  var vConsole = new VConsole();
@@ -23,187 +23,188 @@
       liff.init(function (data) {});
     });
 
-		$('#btn').on('click', function() {
-			liff.sendMessages([
-				{
-					 "type": "flex",
-					 "altText": "Your movie ticket",
-					 "contents":
-					 {
-  "type": "bubble",
-  "hero": {
-    "type": "image",
-    "url": "https://lh3.googleusercontent.com/AdcQEboXq5D4838KFaEd3XIM53xAiwDqsu7mIGLbCClG3z1YAf-wDwKSdqTeWbwy-VOzH3Xdgg5WJRUdQB5Z=w260",
-    "size": "full",
-    "aspectRatio": "20:13",
-    "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "http://linecorp.com/"
-    }
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "md",
-    "contents": [
-      {
-        "type": "text",
-        "text": "Jurassic World : Fallen Kingdom",
-        "wrap": true,
-        "weight": "bold",
-        "gravity": "center",
-        "size": "xl"
-      },
-      {
-        "type": "box",
-        "layout": "baseline",
-        "margin": "md",
-        "contents": [
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
-          },
-          {
-            "type": "icon",
-            "size": "sm",
-            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
-          },
-          {
-            "type": "text",
-            "text": "4.0",
-            "size": "sm",
-            "color": "#999999",
-            "margin": "md",
-            "flex": 0
-          }
-        ]
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "margin": "lg",
-        "spacing": "sm",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Date",
-                "color": "#aaaaaa",
-                "size": "sm",
-                "flex": 1
-              },
-              {
-                "type": "text",
-                "text": "Friday 22, 2:00PM",
-                "wrap": true,
-                "size": "sm",
-                "color": "#666666",
-                "flex": 4
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Place",
-                "color": "#aaaaaa",
-                "size": "sm",
-                "flex": 1
-              },
-              {
-                "type": "text",
-                "text": "7 Floor, No.3",
-                "wrap": true,
-                "color": "#666666",
-                "size": "sm",
-                "flex": 4
-              }
-            ]
-          },
-          {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Seats",
-                "color": "#aaaaaa",
-                "size": "sm",
-                "flex": 1
-              },
-              {
-                "type": "text",
-                "text": "P Row, 7 Seat",
-                "wrap": true,
-                "color": "#666666",
-                "size": "sm",
-                "flex": 4
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "margin": "xxl",
-        "contents": [
-          {
-            "type": "spacer"
-          },
-          {
-            "type": "image",
-            "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
-            "aspectMode": "cover",
-            "size": "xl"
-          },
-          {
-            "type": "text",
-            "text": "You can enter the theater by using this code instead of a ticket",
-            "color": "#aaaaaa",
-            "wrap": true,
-            "margin": "xxl",
-            "size": "xs"
-          }
-        ]
-      }
-    ]
-  }
-}
-
+		$(document).ready(function(){
+		    $('#btn').click(function(){
+					liff.sendMessages([
+						{
+							 "type": "flex",
+							 "altText": "Your movie ticket",
+							 "contents":
+							 {
+			"type": "bubble",
+			"hero": {
+				"type": "image",
+				"url": "https://lh3.googleusercontent.com/AdcQEboXq5D4838KFaEd3XIM53xAiwDqsu7mIGLbCClG3z1YAf-wDwKSdqTeWbwy-VOzH3Xdgg5WJRUdQB5Z=w260",
+				"size": "full",
+				"aspectRatio": "20:13",
+				"aspectMode": "cover",
+				"action": {
+					"type": "uri",
+					"uri": "http://linecorp.com/"
 				}
-          ]).then(function () {
-            liff.closeWindow();
-          }).catch(function (error) {
-            window.alert('Error sending message: ' + error.message);
-          });
-  	});
+			},
+			"body": {
+				"type": "box",
+				"layout": "vertical",
+				"spacing": "md",
+				"contents": [
+					{
+						"type": "text",
+						"text": "Jurassic World : Fallen Kingdom",
+						"wrap": true,
+						"weight": "bold",
+						"gravity": "center",
+						"size": "xl"
+					},
+					{
+						"type": "box",
+						"layout": "baseline",
+						"margin": "md",
+						"contents": [
+							{
+								"type": "icon",
+								"size": "sm",
+								"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+							},
+							{
+								"type": "icon",
+								"size": "sm",
+								"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+							},
+							{
+								"type": "icon",
+								"size": "sm",
+								"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+							},
+							{
+								"type": "icon",
+								"size": "sm",
+								"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+							},
+							{
+								"type": "icon",
+								"size": "sm",
+								"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gray_star_28.png"
+							},
+							{
+								"type": "text",
+								"text": "4.0",
+								"size": "sm",
+								"color": "#999999",
+								"margin": "md",
+								"flex": 0
+							}
+						]
+					},
+					{
+						"type": "box",
+						"layout": "vertical",
+						"margin": "lg",
+						"spacing": "sm",
+						"contents": [
+							{
+								"type": "box",
+								"layout": "baseline",
+								"spacing": "sm",
+								"contents": [
+									{
+										"type": "text",
+										"text": "Date",
+										"color": "#aaaaaa",
+										"size": "sm",
+										"flex": 1
+									},
+									{
+										"type": "text",
+										"text": "Friday 22, 2:00PM",
+										"wrap": true,
+										"size": "sm",
+										"color": "#666666",
+										"flex": 4
+									}
+								]
+							},
+							{
+								"type": "box",
+								"layout": "baseline",
+								"spacing": "sm",
+								"contents": [
+									{
+										"type": "text",
+										"text": "Place",
+										"color": "#aaaaaa",
+										"size": "sm",
+										"flex": 1
+									},
+									{
+										"type": "text",
+										"text": "7 Floor, No.3",
+										"wrap": true,
+										"color": "#666666",
+										"size": "sm",
+										"flex": 4
+									}
+								]
+							},
+							{
+								"type": "box",
+								"layout": "baseline",
+								"spacing": "sm",
+								"contents": [
+									{
+										"type": "text",
+										"text": "Seats",
+										"color": "#aaaaaa",
+										"size": "sm",
+										"flex": 1
+									},
+									{
+										"type": "text",
+										"text": "P Row, 7 Seat",
+										"wrap": true,
+										"color": "#666666",
+										"size": "sm",
+										"flex": 4
+									}
+								]
+							}
+						]
+					},
+					{
+						"type": "box",
+						"layout": "vertical",
+						"margin": "xxl",
+						"contents": [
+							{
+								"type": "spacer"
+							},
+							{
+								"type": "image",
+								"url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
+								"aspectMode": "cover",
+								"size": "xl"
+							},
+							{
+								"type": "text",
+								"text": "You can enter the theater by using this code instead of a ticket",
+								"color": "#aaaaaa",
+								"wrap": true,
+								"margin": "xxl",
+								"size": "xs"
+							}
+						]
+					}
+				]
+			}
+		}
+						}
+							]).then(function () {
+								liff.closeWindow();
+							}).catch(function (error) {
+								window.alert('Error sending message: ' + error.message);
+							});
+		    });
+		});
   </script>
 	</head>
 	<body>
